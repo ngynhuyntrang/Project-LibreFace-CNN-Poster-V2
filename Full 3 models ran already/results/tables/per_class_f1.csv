@@ -1,0 +1,4 @@
+Model,anger,disgust,fear,happiness,sadness,surprise,neutral
+Simple Cnn,62.88,45.48,46.72,88.43,70.23,76.59,70.71
+Poster V2,89.72,75.75,76.12,97.05,90.7,90.85,91.19
+Libreface,52.78,0.0,17.19,86.36,66.38,36.67,68.89

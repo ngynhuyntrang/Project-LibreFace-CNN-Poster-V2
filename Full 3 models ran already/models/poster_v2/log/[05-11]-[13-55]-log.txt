@@ -1,0 +1,1 @@
+Current learning rate: 3.5e-05

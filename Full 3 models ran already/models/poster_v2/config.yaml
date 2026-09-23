@@ -1,0 +1,20 @@
+# POSTER_V2 run configuration
+# All paths are relative to models/poster_v2/ (where main.py and inference_wrapper.py live).
+
+# --- Training ---
+data_dir: ../../data/raf_db       # ImageFolder root (contains train/ and valid/)
+data_type: RAF-DB
+lr: 3.5e-5
+batch_size: 144                   # official POSTER_V2 recommended batch size for CUDA
+epochs: 200
+gpu: "0"                          # used by main.py on CUDA
+device: cuda                      # inference_wrapper.py auto-detects cuda/mps/cpu at runtime
+
+# --- Checkpoints ---
+# Download the official RAF-DB checkpoint from the POSTER_V2 README Google Drive link
+# and place it at: models/poster_v2/checkpoint/rafdb_best.pth
+checkpoint: checkpoint/rafdb_best.pth
+
+# --- Inference output ---
+valid_split: test
+output_csv: ../../predictions/poster_v2_raf_db.csv

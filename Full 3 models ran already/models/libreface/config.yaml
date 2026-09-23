@@ -1,0 +1,25 @@
+# LibreFace inference configuration
+# All paths are relative to models/libreface/ (where inference_wrapper.py lives).
+# Phuc: update data_root if your RAF-DB is stored at a different path.
+
+# Path to the valid/ split folder.
+# Expected layout (class-subdir): data_root/0/*.jpg ... data_root/6/*.jpg
+# Fallback layout (flat):         data_root/*.jpg  + EmoLabel/list_patition_label.txt
+data_root: ../../data/raf_db/test
+
+output_csv: ../../predictions/libreface_raf_db.csv
+
+# Device for LibreFace model inference.
+# inference_wrapper.py auto-detects cuda/mps/cpu at runtime; this value is the fallback default.
+device: cuda
+
+# Temporary directory for LibreFace aligned-face crops (auto-cleaned after inference).
+temp_dir: ./tmp
+
+# Directory where LibreFace downloads model weights (~300 MB, one-time download).
+weights_download_dir: ./weights_libreface
+weights_dir: ./weights_libreface
+
+# batch_size is only used by the LibreFace video API — not the per-image API used here.
+# Kept for completeness / future use.
+batch_size: 64
